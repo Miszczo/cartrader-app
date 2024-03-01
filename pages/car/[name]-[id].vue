@@ -29,7 +29,6 @@ definePageMeta({
 
 <template>
     <div v-if="car">
-        {{ car }}
         <CarDetailHero :car="car" />
         <CarDetailAttributes :features="car.features" />
         <CarDetailDescription :description="car.description" />

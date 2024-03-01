@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
     <div class="mt-10">
-        <img
+        <NuxtImg
             :src="car.url"
             class="w-full"
             alt=""
