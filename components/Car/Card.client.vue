@@ -15,7 +15,6 @@ const emit = defineEmits(['favoriteCar']);
 </script>
 
 <template>
-    {{ favored }}
     <div class="relative shadow border w-full overflow-hidden mb-5 h-[200px]">
         <img
             class="absolute w-7 right-5 top-2 z-20 cursor-pointer"
