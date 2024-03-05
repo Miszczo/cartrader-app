@@ -2,7 +2,7 @@
 const props = defineProps({
     title: String,
     name: String,
-    options: Array
+    placeholder: String
 })
 const emits = defineEmits(['changeInput']);
 const state = ref("");
@@ -12,25 +12,19 @@ const onChange = () => {
 </script>
 
 <template>
-    <div class="flex flex-col w-[48%] t-2">
+    <div class="flex flex-col w-[100%] t-2">
         <label
             for=""
             class="text-cyan-500 mb-2 text-sm"
         >
             {{ title }}
         </label>
-        <select
-            @change="onChange"
+        <textarea
+            @input="onChange"
             v-model="state"
-            name=""
-            id=""
+            :name="name"
             class="p-2 border w-100 rounded"
-        >
-            <option
-                v-for="option in options"
-                :key="option.id"
-                :value="option"
-            >{{ option }}</option>
-        </select>
+            :placeholder="placeholder"
+        ></textarea>
     </div>
 </template>

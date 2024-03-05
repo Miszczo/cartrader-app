@@ -2,7 +2,7 @@
 const props = defineProps({
     title: String,
     name: String,
-    options: Array
+    placeholder: String
 })
 const emits = defineEmits(['changeInput']);
 const state = ref("");
@@ -19,18 +19,12 @@ const onChange = () => {
         >
             {{ title }}
         </label>
-        <select
-            @change="onChange"
+        <input
+            @input="onChange"
             v-model="state"
-            name=""
-            id=""
+            :name="name"
             class="p-2 border w-100 rounded"
+            :placeholder="placeholder"
         >
-            <option
-                v-for="option in options"
-                :key="option.id"
-                :value="option"
-            >{{ option }}</option>
-        </select>
     </div>
 </template>
